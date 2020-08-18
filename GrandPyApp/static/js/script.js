@@ -117,7 +117,7 @@ function initMap(position, tag) {
   });
 };
 
-/*$('.message-submit').click(function() {
+$('.message-submit').click(function() {
   insertMessage();
 });
 
@@ -126,7 +126,8 @@ $(window).on('keydown', function(e) {
     insertMessage();
     return false;
   };
-});*/
+});
+
 $('#message-form').submit(function(event) {
   event.preventDefault();
   insertMessage();
