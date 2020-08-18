@@ -132,7 +132,7 @@ $('#message-form').submit(function(event) {
   event.preventDefault();
   insertMessage();
 });
-last = "Voilà petit fou! Une autre Question a me soumettre ?"
+
 function firstGrandPyMessage() {
   if ($('.message-input').val() != '') {
     return false;
