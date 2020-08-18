@@ -13,14 +13,13 @@ def parse_user_input(user_input, stop_words_custom):
 
     user_input = re.split(",|'| |-|;", user_input)
     user_input = [x.lower() for x in user_input]
-    print(user_input)
     new_sentence = []
 
     for word in user_input:
         if word not in stop_words_custom:
             new_sentence.append(word)
     result = ' '.join(new_sentence)
-    print(result)
+
     return result
 
 
