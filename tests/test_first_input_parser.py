@@ -1,4 +1,4 @@
-from GrandPyApp.first_input_parser import parse_user_input as parse
+from grandpyapp.first_input_parser import parse_user_input as parse
 from .config import STOP_WORDS
 
 
