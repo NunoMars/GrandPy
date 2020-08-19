@@ -21,14 +21,3 @@ def parse_user_input(user_input, stop_words_custom):
     result = ' '.join(new_sentence)
 
     return result
-
-
-if __name__ == "__main__":
-    from GrandPyApp.views import stop_words_custom
-
-    print("Salut, je suis GrandPy, je suis là afin de t'aider ;-)")
-
-    user_input = input('Que veux-tu savoir mon enfant?  :  ')
-    parsed_user_input = parse_user_input(user_input, stop_words_custom)
-
-    print("terminé, prêt pour requête : ", parsed_user_input)

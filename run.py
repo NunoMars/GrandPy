@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: Utf-8 -*
 
-from GrandPyApp import app
+from grandpyapp import app
 
 
 """

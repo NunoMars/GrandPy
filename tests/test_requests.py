@@ -1,10 +1,13 @@
-from GrandPyApp.interface_requests import (
+import json
+
+from grandpyapp.interface_requests import (
   call_google_maps_positionnement,
   call_wiki_main_page,
   call_wiki_found_page
 )
 from .config import API_PASSWORD
-import json
+
+
 
 """
 For test all API's you need a Google DEV Key,
@@ -19,14 +22,8 @@ def test_call_google_maps(monkeypatch):
     with open("gmaps_data.json") as g_maps_data:
         results_test = json.load(g_maps_data)
 
-    class MockResponse:
-        def read(self):
-            result_strings = json.dumps(results_test)
-            result_bytes = result_strings.encode()
-            return result_bytes
-
-    def mock_g_maps(url):
-        return MockResponse()
+    def mock_g_maps(key, tittle):
+        return results_test
 
     monkeypatch.setattr(
       "GrandPyApp.interface_requests.call_google_maps_positionnement",
@@ -46,14 +43,8 @@ def test_call_wiki_main_page(monkeypatch):
     with open("wiki_tittle_main_page.json") as wiki_tittle_data:
         results_call_wiki_main_page = json.load(wiki_tittle_data)
 
-    class MockResponse:
-        def read(self):
-            result_strings = json.dumps(results_call_wiki_main_page)
-            result_bytes = result_strings.encode()
-            return result_bytes
-
-    def mock_call_wiki_main_page(url):
-        return MockResponse()
+    def mock_call_wiki_main_page(title):
+        return results_call_wiki_main_page
 
     monkeypatch.setattr(
       "GrandPyApp.interface_requests.call_wiki_main_page",
@@ -67,14 +58,8 @@ def test_call_wiki_found_page(monkeypatch):
     with open("wiki_found_page.json") as wiki_found_data:
         results_call_wiki_found_page = json.load(wiki_found_data)
 
-    class MockResponse:
-        def read(self):
-            result_strings = json.dumps(results_call_wiki_found_page)
-            result_bytes = result_strings.encode()
-            return result_bytes
-
-    def mock_call_wiki_found_page(url):
-        return MockResponse()
+    def mock_call_wiki_found_page(pageid):
+        return results_call_wiki_found_page
 
     monkeypatch.setattr(
       "GrandPyApp.interface_requests.call_wiki_found_page",

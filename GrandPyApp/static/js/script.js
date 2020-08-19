@@ -117,17 +117,6 @@ function initMap(position, tag) {
   });
 };
 
-$('.message-submit').click(function() {
-  insertMessage();
-});
-
-$(window).on('keydown', function(e) {
-  if (e.which == 13) {
-    insertMessage();
-    return false;
-  };
-});
-
 $('#message-form').submit(function(event) {
   event.preventDefault();
   insertMessage();
