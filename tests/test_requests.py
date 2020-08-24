@@ -26,7 +26,7 @@ def test_call_google_maps(monkeypatch):
         return results_test
 
     monkeypatch.setattr(
-      "GrandPyApp.interface_requests.call_google_maps_positionnement",
+      "grandpyapp.interface_requests.call_google_maps_positionnement",
       mock_g_maps
       )
     assert call_google_maps_positionnement(
@@ -47,7 +47,7 @@ def test_call_wiki_main_page(monkeypatch):
         return results_call_wiki_main_page
 
     monkeypatch.setattr(
-      "GrandPyApp.interface_requests.call_wiki_main_page",
+      "grandpyapp.interface_requests.call_wiki_main_page",
       mock_call_wiki_main_page
       )
 
@@ -62,11 +62,11 @@ def test_call_wiki_found_page(monkeypatch):
         return results_call_wiki_found_page
 
     monkeypatch.setattr(
-      "GrandPyApp.interface_requests.call_wiki_found_page",
+      "grandpyapp.interface_requests.call_wiki_found_page",
       mock_call_wiki_found_page
       )
 
-    data = call_wiki_main_page("openclassrooms")
+    data = call_wiki_main_page("Openclassrooms")
     pageid = data["query"]["search"][0]["pageid"]
 
     assert call_wiki_found_page(pageid) == results_call_wiki_found_page

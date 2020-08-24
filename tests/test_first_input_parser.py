@@ -16,4 +16,4 @@ def test_parse_user_input():
 def test_parse_user_input_empty():
     test_empty_user_input = " "
     assert parse(
-        test_empty_user_input, stop_words_custom) == []
+        test_empty_user_input, stop_words_custom) == ""
